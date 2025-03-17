@@ -1,0 +1,23 @@
+
+version: '3.8'
+
+services:
+  # Servicio de frontend (React)
+  frontend:
+    build: 
+      context: .
+      args:
+        - VITE_API_URL=http://localhost:8080/api
+    container_name: cart-frontend
+    ports:
+      - "3000:80"  # Usando puerto 3000 para evitar problemas de permisos
+    environment:
+      - NODE_ENV=production
+      - VITE_API_URL=http://localhost:8080/api
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl -f http://localhost:80 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
