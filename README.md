@@ -33,7 +33,7 @@ Para ejecutar este proyecto en tu entorno local:
 
 ```sh
 # Paso 1: Clona el repositorio
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/ByronChang/cart-frontend
 
 # Paso 2: Navega al directorio del proyecto
 cd tienda-online
